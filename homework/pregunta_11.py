@@ -22,3 +22,17 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
+    import homework.read_data as rd
+    tabla = (rd.read_data("tbl1.tsv")
+          .groupby("c0")["c4"]
+          .apply(lambda x: ",".join(x))
+          .reset_index()
+          )
+
+    tabla["c4"] = (tabla["c4"]
+                   .apply(lambda x: ","
+                          .join( sorted( x.split(",") ) )
+                          )
+    )
+    return tabla
+print(pregunta_11())

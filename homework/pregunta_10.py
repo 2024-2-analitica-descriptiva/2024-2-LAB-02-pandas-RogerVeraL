@@ -20,3 +20,15 @@ def pregunta_10():
     D                   1:2:3:5:5:7
     E   1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
+    import homework.read_data as rd
+    tbl0 = (rd.read_data("tbl0.tsv")
+            .sort_values(by=['c2'])
+            .groupby("c1")["c2"]
+            .apply(lambda x: ":"
+                   .join(x.astype(str)))
+            .reset_index(name="c2")
+            .set_index("c1")
+            )
+    return tbl0
+print(pregunta_10())
+

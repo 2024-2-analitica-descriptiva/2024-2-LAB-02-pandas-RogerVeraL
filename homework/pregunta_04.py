@@ -20,3 +20,6 @@ def pregunta_04():
     E    4.785714
     Name: c2, dtype: float64
     """
+    import homework.read_data as rd
+    return rd.read_data("tbl0.tsv").groupby("c1")["c2"].mean()
+print(pregunta_04())

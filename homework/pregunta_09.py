@@ -23,3 +23,8 @@ def pregunta_09():
     39  39  E   5  1998-01-26  1998
 
     """
+    import homework.read_data as rd
+    pd = rd.read_data("tbl0.tsv").copy()
+    pd["year"] = pd["c3"].apply(lambda x: x.split("-")[0])
+    return pd
+print(pregunta_09())

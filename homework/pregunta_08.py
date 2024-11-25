@@ -22,3 +22,9 @@ def pregunta_08():
     39   39   E    5  1998-01-26    44
 
     """
+    import homework.read_data as rd
+    pd = rd.read_data("tbl0.tsv").copy()
+    pd["suma"] = pd["c0"] + pd["c2"]
+    return pd
+print(pregunta_08())
+     

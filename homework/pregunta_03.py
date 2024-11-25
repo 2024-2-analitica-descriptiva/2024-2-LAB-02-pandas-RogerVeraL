@@ -21,3 +21,8 @@ def pregunta_03():
     Name: count, dtype: int64
 
     """
+    import homework.read_data as rd
+    tbl0 = rd.read_data("tbl0.tsv")["c1"].value_counts()
+    return tbl0.sort_index()
+print(pregunta_03())
+    

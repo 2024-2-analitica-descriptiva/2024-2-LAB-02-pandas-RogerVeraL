@@ -15,3 +15,7 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
+    import homework.read_data as rd
+    unicos = rd.read_data("tbl1.tsv")["c4"].unique()
+    return sorted(''.join(unicos).upper())
+print(pregunta_06())
